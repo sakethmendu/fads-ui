@@ -1,0 +1,68 @@
+<div class="container p-3 my-3 bg-warning border">
+    <h2>Complete Case</h2>
+    <form>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <label>Case Id: &nbsp;
+                            <select name="caseId" id="caseId-select" [(ngModel)]="case.caseId" (change)="onChange($event)">
+                                <option  value='' ></option>
+                                <option *ngFor="let task of tasklist;  let i = index" >{{task.variables[2].value}}</option>
+                            </select>
+                        </label>
+                    <td>
+                        <label>Case Type: <input type="text" disabled [(ngModel)]="case.caseType" 
+                                name="caseType"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Case Status: 
+                            <select name="caseStatus" id="caseType-selected" [(ngModel)]="case.caseStatus">
+                                <option value="INITIAL REVIEW">INITIAL REVIEW</option>
+                                <option value="OPEN" selected>OPEN </option>
+                                <option value="PENDING">PENDING</option>
+                                <option value="CLOSED">CLOSED</option>
+
+                                <option value="COMPLETE">COMPLETE</option>
+                                <option value="OPEN">OPEN</option>
+                                <option value="SAMPLE SELECTION">SAMPLE SELECTION</option>
+                                <option value="MEDICAL RECORDS REQUESTED">MEDICAL RECORDS REQUESTED</option>
+                                <option value="MEDICAL RECORDS RECEIVED">MEDICAL RECORDS RECEIVED</option>
+                                <option value="MEDICAL RECORDS REVIEWED">MMEDICAL RECORDS REVIEWED</option>
+                                <option value="PRELIMINARY FINDINGS REVIEW">PRELIMINARY FINDINGS REVIEW</option>
+                                <option value="PRELIMINARY LETTER SENT">PRELIMINARY LETTER SENT</option>
+                                <option value="MPROVIDER RESPONSE RECEIVED">PROVIDER RESPONSE RECEIVED</option>
+                                <option value="PROVIDER RESPONSE REVIEW">PROVIDER RESPONSE REVIEW</option>
+                                <option value="FINAL FINDINGS REVIEW">FINAL FINDINGS REVIEW</option>
+                                <option value="CLOSED">CLOSED</option>
+                                <option value="ABORT">ABORT</option>
+                            </select>
+                        </label>
+                    </td>
+                    <td>
+                        <label>Case Investigation Type:
+                            <select name="caseinvestigationType" id="caseType-selected"
+                                [(ngModel)]="case.investigationType">
+                                <option value="PRELIMINARY">PRELIMINARY</option>
+                                <option value="FULL" selected>FULL</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Case Creator: <input type="text" disabled [(ngModel)]="case.caseCreator"
+                                 name="caseCreator"></label>
+                    </td>
+                    <td>
+                        <label>Case Creator Mail: <input type="text" disabled [(ngModel)]="case.caseCreatorMail"
+                                 name="caseCreatorMail"></label>
+                    </td>
+                </tr>
+        </table>
+        <a class="btn btn-secondary" (click)="completeCase()">Complete</a>
+    </form>
+</div>

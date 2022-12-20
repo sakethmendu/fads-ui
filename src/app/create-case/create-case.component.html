@@ -1,0 +1,67 @@
+<div class="container p-3 my-3 bg-warning border">
+    <h2>Create Case</h2>
+    <form>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <label>Case Id: <input type="text" [(ngModel)]="case.caseId" name="caseId"></label>
+                    </td>
+
+                    <td>
+                        <label>Case Type:
+                            <select name="caseType" id="caseType-selected" [(ngModel)]="case.caseType">
+                                <option value="Member Intake">Member Intake</option>
+                                <option value="Provider Intake" selected>Provider Intake </option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Case Status:
+                            <select name="vaseType" id="vaseType-selected" [(ngModel)]="case.caseStatus">
+                                <option value="INITIAL REVIEW">INITIAL REVIEW</option>
+                                <option value="OPEN" selected>OPEN </option>
+                                <option value="PENDING">PENDING</option>
+                                <option value="CLOSED">CLOSED</option>
+
+                                <option value="COMPLETE">COMPLETE</option>
+                                <option value="OPEN">OPEN</option>
+                                <option value="SAMPLE SELECTION">SAMPLE SELECTION</option>
+                                <option value="MEDICAL RECORDS REQUESTED">MEDICAL RECORDS REQUESTED</option>
+                                <option value="MEDICAL RECORDS RECEIVED">MEDICAL RECORDS RECEIVED</option>
+                                <option value="MEDICAL RECORDS REVIEWED">MMEDICAL RECORDS REVIEWED</option>
+                                <option value="PRELIMINARY FINDINGS REVIEW">PRELIMINARY FINDINGS REVIEW</option>
+                                <option value="PRELIMINARY LETTER SENT">PRELIMINARY LETTER SENT</option>
+                                <option value="MPROVIDER RESPONSE RECEIVED">PROVIDER RESPONSE RECEIVED</option>
+                                <option value="PROVIDER RESPONSE REVIEW">PROVIDER RESPONSE REVIEW</option>
+                                <option value="FINAL FINDINGS REVIEW">FINAL FINDINGS REVIEW</option>
+                                <option value="CLOSED">CLOSED</option>
+                                <option value="ABORT">ABORT</option>
+                            </select>
+                        </label>
+                    </td>
+                    <td>
+                        <label>Case Investigation Type:
+                            <select name="caseinvestigationType" id="caseType-selected" [(ngModel)]="case.investigationType">
+                                <option value="PRELIMINARY">PRELIMINARY</option>
+                                <option value="FULL" selected>FULL</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Case Creator: <input type="text" [(ngModel)]="case.caseCreator"
+                                name="caseCreator"></label>
+                    </td>
+                    <td>
+                        <label>Case Creator Mail: <input type="text" [(ngModel)]="case.caseCreatorMail"
+                                name="caseCreatorMail"></label>
+                    </td>
+                </tr>
+        </table>
+        <a class="btn btn-secondary" (click)="createCase()">Create</a>
+    </form>
+</div>
